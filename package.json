@@ -1,0 +1,54 @@
+{
+  "name": "dropbg-mcp",
+  "mcpName": "io.github.dropbg/background-remover-mcp",
+  "version": "1.0.2",
+  "description": "Model Context Protocol (MCP) server for DropBG (dropbg.io) AI background removal — works with Claude, Cursor, DeepSeek, Qwen, Kimi, GLM, Trae, Cherry Studio, Windsurf, Cline, and Roo Code",
+  "homepage": "https://dropbg.io/en/extensions#mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dropbg/background-remover-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dropbg/background-remover-mcp/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "dropbg-mcp": "./bin/dropbg-mcp.mjs"
+  },
+  "main": "./bin/dropbg-mcp.mjs",
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE",
+    "server.json",
+    "glama.json"
+  ],
+  "scripts": {
+    "start": "node ./bin/dropbg-mcp.mjs",
+    "test": "node --test ./test/mcp.test.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "dropbg",
+    "remove-bg",
+    "background-removal",
+    "ai",
+    "image-processing",
+    "claude",
+    "cursor",
+    "deepseek",
+    "qwen",
+    "kimi",
+    "glm",
+    "trae",
+    "cherry-studio",
+    "cline",
+    "roo-code",
+    "ollama"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
