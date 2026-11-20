@@ -10,7 +10,7 @@ const MAX_BATCH_FILES = 10;
 
 const SERVER_INFO = {
   name: 'dropbg-mcp',
-  version: '1.0.3',
+  version: '1.0.4',
 };
 
 const TOOLS = [
@@ -191,6 +191,10 @@ async function parseErrorResponse(response) {
 async function callRemoveBgApi(formData, destinationPath) {
   const response = await fetch(API_URL, {
     method: 'POST',
+    headers: {
+      'User-Agent': `${SERVER_INFO.name}/${SERVER_INFO.version}`,
+      'X-DropBG-Source': 'mcp',
+    },
     body: formData,
   });
 
@@ -204,6 +208,7 @@ async function callRemoveBgApi(formData, destinationPath) {
   await fs.writeFile(resolvedOutput, Buffer.from(arrayBuffer));
 
   return {
+    record_id: response.headers.get('x-record-id') || null,
     output_path: resolvedOutput,
     content_type: response.headers.get('content-type') || 'image/png',
     bytes: arrayBuffer.byteLength,
