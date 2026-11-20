@@ -10,7 +10,7 @@ const MAX_BATCH_FILES = 10;
 
 const SERVER_INFO = {
   name: 'dropbg-mcp',
-  version: '1.0.2',
+  version: '1.0.3',
 };
 
 const TOOLS = [
